@@ -1,0 +1,55 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    
+    // Add the Google services plugin for Firebase
+    id "com.google.gms.google-services"
+}
+
+android {
+    namespace = "com.example.parking_app"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.parking_app"
+        minSdkVersion 23
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+    // Add the Firebase BoM (Bill of Materials)
+    implementation platform('com.google.firebase:firebase-bom:33.3.0')
+
+    // Add Firebase Analytics (or other Firebase products like Authentication)
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // If you need Firebase Authentication:
+    implementation 'com.google.firebase:firebase-auth'
+}
+
+flutter {
+    source = "../.."
+}
+
+// Apply the Google services plugin at the bottom of the file
+apply plugin: 'com.google.gms.google-services'
