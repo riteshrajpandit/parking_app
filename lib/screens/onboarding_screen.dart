@@ -142,7 +142,7 @@ class OnboardingSlide extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: size.height, // Ensure this takes the full screen height
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [Colors.blueAccent, Colors.lightBlueAccent],
           begin: Alignment.topLeft,
@@ -201,7 +201,7 @@ class OnboardingSlide extends StatelessWidget {
             // Title
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
@@ -212,7 +212,7 @@ class OnboardingSlide extends StatelessWidget {
             // Description
             Text(
               description,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 color: Colors.white70,
               ),
