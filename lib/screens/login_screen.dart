@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen>
       prefs.setBool('isLoggedIn', true);
 
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => HomeScreen()));
+          context, MaterialPageRoute(builder: (context) => const HomeScreen()));
     } catch (e) {
       print(e); // Handle error here
     }
